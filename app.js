@@ -1,10 +1,12 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const nodemailer = require("nodemailer");
+const cors = require("cors"); // Import the 'cors' package
 
 const app = express();
 
 // Middleware setup
+app.use(cors()); // Enable CORS
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
