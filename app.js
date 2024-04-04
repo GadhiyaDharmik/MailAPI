@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 // Endpoint to handle form submission
 app.post("/send-email", async (req, res) => {
   try {
-    const { name, email, message } = req.body;
+    const { name, email, keys } = req.body;
 
     // Create a Nodemailer transporter using your email service credentials
     const transporter = nodemailer.createTransport({
@@ -25,7 +25,7 @@ app.post("/send-email", async (req, res) => {
     // Email content
     const mailOptions = {
       from: "dgadhiya412@rku.ac.in",
-      to: "mthumar85@gmail.com", // Replace with the recipient's email address
+      to: email, // Replace with the recipient's email address
       subject: "New Form Submission",
       text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
     };
