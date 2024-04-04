@@ -22,12 +22,23 @@ app.post("/send-email", async (req, res) => {
       },
     });
 
+    // HTML content for the email
+    const htmlContent = `
+      <h3 style='color:#000'>Password Reset Request From PawanPutra Technology</h3>
+      <p style='color:#000'>Dear ${name},</p>
+      <p style='color:#000'>You are receiving this email because a password reset request has been initiated for your PawanPutraTechnology account.</p>
+      <p style='color:#000'> To reset your password, please click on the following link: <a href='http://localhost:3000/#/authentication/reset-password/${keys}'>http://localhost:3000/#/authentication/reset-password/${keys}</a></p>
+      <p style='color:#000'>If you did not initiate this request, please disregard this message. Your account remains secure, and no action is needed.</p>
+      <p style='color:#000'>Thank you,</p>
+      <p style='color:#000'>PawanPutra Technology</p>
+    `;
+
     // Email content
     const mailOptions = {
       from: "dgadhiya412@rku.ac.in",
       to: email, // Replace with the recipient's email address
       subject: "New Form Submission",
-      text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
+      html: htmlContent,
     };
 
     // Send email
