@@ -30,7 +30,7 @@ app.post("/send-email", (req, res) => {
   const mailOptions = {
     from: "dgadhiya412@rku.ac.in",
     to: "patelcabservic@gmail.com",
-    subject: subject,
+    subject: "New Contect message",
     html: `<div>Name: ${name}</div>
     <div>Email: ${email}\n</div>
     <div>Subject is: ${number}\n</div>
