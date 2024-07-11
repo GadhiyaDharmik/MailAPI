@@ -31,11 +31,15 @@ app.post("/send-email", async (req, res) => {
 
     // HTML content for the email
     const htmlContent = `
-      <h3 style='color:#000'>Message from PawanPutra Technology</h3>
-      <p style='color:#000'>You have received a new message:</p>
-      <p style='color:#000'>${message}</p>
-      <p style='color:#000'>Thank you,</p>
-      <p style='color:#000'>PawanPutra Technology</p>
+     <h3 style='color:#000; font-family: Arial, sans-serif;'>Thank You for Contacting Us</h3>
+        <ul style='color:#333; font-family: Arial, sans-serif;'>
+            <li><strong>Name:</strong> Dharmik gadhiya</li>
+            <li><strong>Email:</strong> dharmikgadhiya52525@gmail.com</li>
+            <li><strong>Mobile Number:</strong> 09724740340</li>
+            <li><strong>Message:</strong> hii..</li>
+        </ul>
+        <p style='color:#333; font-family: Arial, sans-serif;'>Best Regards,</p>
+        <p style='color:#333; font-family: Arial, sans-serif;'>Patel Cab Service</p>
     `;
 
     // Email content
