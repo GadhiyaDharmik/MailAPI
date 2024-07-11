@@ -28,8 +28,8 @@ app.post("/send-email", (req, res) => {
 
   // Define email options
   const mailOptions = {
-    from: "dgadhiya412@rku.ac.in",
-    to: "patelcabservic@gmail.com",
+    from: "patelcabservic@gmail.com",
+    to: "dharmikgadhiya52525@gmail.com",
     subject: "New Contect message",
     html: `
   <img src="https://gadhiyadharmik.github.io/patelcabservice.github.io/img/PTEL-removebg2.png" width="300px">
