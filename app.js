@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 
 // Define your route to handle form submissions
 app.post("/send-email", (req, res) => {
-  const { name, email, subject, message } = req.body;
+  const { name, email, number, message } = req.body;
 
   // Create a transporter with your SMTP settings
   const transporter = nodemailer.createTransport({
@@ -29,11 +29,11 @@ app.post("/send-email", (req, res) => {
   // Define email options
   const mailOptions = {
     from: "dgadhiya412@rku.ac.in",
-    to: "dharmik.webdeveloper@gmail.com",
+    to: "patelcabservic@gmail.com",
     subject: subject,
     html: `<div>Name: ${name}</div>
     <div>Email: ${email}\n</div>
-    <div>Subject is: ${subject}\n</div>
+    <div>Subject is: ${number}\n</div>
     Message: ${message}`,
   };
 
