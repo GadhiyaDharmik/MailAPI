@@ -44,7 +44,7 @@ app.post("/send-email", async (req, res) => {
 
     // Email content
     const mailOptions = {
-      from: "your-email@gmail.com", // Replace with your email address
+      from: "dgadhiya412@rku.ac.in", // Replace with your email address
       to: email, // The recipient's email address
       subject: "New Message from PawanPutra Technology",
       html: htmlContent,
