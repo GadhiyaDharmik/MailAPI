@@ -25,7 +25,7 @@ app.post("/send-email", async (req, res) => {
       service: "gmail", // e.g., 'gmail'
       auth: {
       user: "dgadhiya412@rku.ac.in",
-        pass: 'R789s73"""""',
+        pass: 'R789s73""""""',
       },
     });
 
