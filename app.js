@@ -13,33 +13,36 @@ app.use(bodyParser.json());
 // Endpoint to handle form submission
 app.post("/send-email", async (req, res) => {
   try {
-    const { name, email, keys } = req.body;
+    const { email, message } = req.body;
+
+    // Check if both email and message are provided
+    if (!email || !message) {
+      return res.status(400).json({ error: "Email and message are required." });
+    }
 
     // Create a Nodemailer transporter using your email service credentials
     const transporter = nodemailer.createTransport({
       service: "gmail", // e.g., 'gmail'
       auth: {
-        user: "dgadhiya412@rku.ac.in",
-        pass: 'R789s73"""""',
+        user: "your-email@gmail.com", // Replace with your email address
+        pass: 'your-email-password', // Replace with your email password
       },
     });
 
     // HTML content for the email
     const htmlContent = `
-      <h3 style='color:#000'>Password Reset Request From PawanPutra Technology</h3>
-      <p style='color:#000'>Dear ${name},</p>
-      <p style='color:#000'>You are receiving this email because a password reset request has been initiated for your PawanPutraTechnology account.</p>
-      <p style='color:#000'> To reset your password, please click on the following link: <a href='http://localhost:3000/#/authentication/reset-password/${keys}'>http://localhost:3000/#/authentication/reset-password/${keys}</a></p>
-      <p style='color:#000'>If you did not initiate this request, please disregard this message. Your account remains secure, and no action is needed.</p>
+      <h3 style='color:#000'>Message from PawanPutra Technology</h3>
+      <p style='color:#000'>You have received a new message:</p>
+      <p style='color:#000'>${message}</p>
       <p style='color:#000'>Thank you,</p>
       <p style='color:#000'>PawanPutra Technology</p>
     `;
 
     // Email content
     const mailOptions = {
-      from: "dgadhiya412@rku.ac.in",
-      to: email, // Replace with the recipient's email address
-      subject: "New Form Submission",
+      from: "your-email@gmail.com", // Replace with your email address
+      to: email, // The recipient's email address
+      subject: "New Message from PawanPutra Technology",
       html: htmlContent,
     };
 
