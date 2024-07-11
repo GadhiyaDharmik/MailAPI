@@ -23,7 +23,7 @@ app.post("/send-email", (req, res) => {
       user: "dgadhiya412@rku.ac.in",
       pass: 'R789s73""""""',
     },
-    tls:{rejectUnauthorized:false}
+    // tls:{rejectUnauthorized:false}
   });
 
   // Define email options
